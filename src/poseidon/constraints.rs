@@ -26,7 +26,7 @@ pub struct CRHGadget<F: PrimeField, P: Rounds> {
 }
 
 impl<F: PrimeField, P: Rounds> CRHGadget<F, P> {
-	fn permute(
+	pub fn permute(
 		parameters: &PoseidonParametersVar<F>,
 		mut state: Vec<FpVar<F>>,
 	) -> Result<Vec<FpVar<F>>, SynthesisError> {

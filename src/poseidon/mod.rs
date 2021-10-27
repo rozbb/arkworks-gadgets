@@ -140,7 +140,10 @@ pub struct CRH<F: PrimeField, P: Rounds> {
 }
 
 impl<F: PrimeField, P: Rounds> CRH<F, P> {
-	fn permute(params: &PoseidonParameters<F>, mut state: Vec<F>) -> Result<Vec<F>, PoseidonError> {
+	pub fn permute(
+		params: &PoseidonParameters<F>,
+		mut state: Vec<F>,
+	) -> Result<Vec<F>, PoseidonError> {
 		let width = P::WIDTH;
 
 		let mut round_keys_offset = 0;
